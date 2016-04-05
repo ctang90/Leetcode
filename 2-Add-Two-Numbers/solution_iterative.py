@@ -6,7 +6,7 @@
 
 
 class Solution(object):
-    def addTwoNumbers(self, l1, l2, c=0):
+    def addTwoNumbers(self, l1, l2):
         sum = 0
         prehead = ListNode(-1)
         tail = prehead
