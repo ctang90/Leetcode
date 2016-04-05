@@ -10,15 +10,13 @@ class Solution(object):
         sum = 0
         prehead = ListNode(-1)
         tail = prehead
-        while True:
+        while l1 != None or l2 != None or sum != 0:
             if l1 != None:
                 sum += l1.val
                 l1 = l1.next
             if l2 != None:
                 sum += l2.val
                 l2 = l2.next
-            if l1 == None and l2 == None and sum == 0:
-                break
             node = ListNode(sum % 10)
             sum = sum / 10
             tail.next = node
