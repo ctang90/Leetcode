@@ -24,12 +24,14 @@ class Solution(object):
             else:
                 val = l1.val + c
                 if val < 10:
-                    l1.val = val
-                    return l1
+                    node = ListNode(val)
+                    node.next = l1.next
+                    return node
                 else:
+                    node = ListNode(val % 10)
                     nextNode = self.addTwoNumbers(l1.next, None, val/10)
-                    l1.next = nextNode
-                    return l1
+                    node.next = nextNode
+                    return node
         
         if l1 == None and l2 != None:
             if c == 0:
@@ -37,12 +39,14 @@ class Solution(object):
             else:
                 val = l2.val + c
                 if val < 10:
-                    l2.val = val
-                    return l2
+                    node = ListNode(val)
+                    node.next = l2.next
+                    return node
                 else:
+                    node = ListNode(val % 10)
                     nextNode = self.addTwoNumbers(None, l2.next, val/10)
-                    l2.next = nextNode
-                    return l2
+                    node.next = nextNode
+                    return node
         
         val = l1.val + l2.val + c
         node = ListNode(val % 10)
