@@ -7,10 +7,10 @@ class Solution(object):
         """
         numDict = {}
         for i in range(0, len(nums)):
-            numDict[nums[i]] = i
             other = target - nums[i]
             if ( other in numDict.keys()) and (numDict[other] != i):
                 return [numDict[other], i]
+            numDict[nums[i]] = i
                 
             
         
