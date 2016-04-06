@@ -15,7 +15,7 @@ class Solution(object):
             for j in range(i, len(s), step):
                 res += s[j]
                 if j + step - 2 * i < len(s):
-                    res += s[j + step - 2]
+                    res += s[j + step - 2 * i]
                     
         res += s[numRows-1::step]
                     
