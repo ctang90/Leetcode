@@ -7,6 +7,7 @@ class Solution(object):
         """
         if numRows == 1:
             return s
+        res = ""
         for row in range(0, numRows):
             rowRes = ""
             index = row
