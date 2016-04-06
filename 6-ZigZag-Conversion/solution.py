@@ -5,7 +5,8 @@ class Solution(object):
         :type numRows: int
         :rtype: str
         """
-        res = ""
+        if numRows == 1:
+            return s
         for row in range(0, numRows):
             rowRes = ""
             index = row
