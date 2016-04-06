@@ -22,6 +22,9 @@ class Solution(object):
             
         if sign:
             res = - res
+            
+        if (res >= 2 ** 31 - 1) or (res < - 2 ** 31):
+            return 0
         return res
             
         
