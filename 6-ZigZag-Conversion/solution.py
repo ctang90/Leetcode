@@ -5,6 +5,8 @@ class Solution(object):
         :type numRows: int
         :rtype: str
         """
+        if numRows == 1:
+            return s
         step = numRows * 2 - 2
         # first row
         res = s[0::step]
