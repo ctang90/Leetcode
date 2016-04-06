@@ -5,22 +5,17 @@ class Solution(object):
         :type numRows: int
         :rtype: str
         """
-        if numRows == 1:
-            return s
-        res = ""
-        for row in range(0, numRows):
-            rowRes = ""
-            index = row
-            while index < len(s):
-                rowRes = rowRes + s[index]
-                if row == 0 or row == numRows - 1:
-                    index = index + (2 * numRows - 2)
-                else:
-                    if len(rowRes) % 2 == 1:
-                        index = index + (2 * numRows - 2 - 2 * row)
-                    else:
-                        index = index + (2 * row)
-            res = res + rowRes
+        step = numRows * 2 - 2
+        # first row
+        res = s[0::step]
+        
+        for i in range(1, numRows - 1):
+            for j in range(i, len(s), step):
+                res += s[j]
+                if j + step - 2 * i < len(s):
+                    res += s[j + step - 2]
+                    
+        res += s[numRows-1::step]
                     
         return res
         
